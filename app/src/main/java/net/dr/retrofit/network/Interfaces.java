@@ -16,10 +16,10 @@ public interface Interfaces {
     public static final String NAME = "name";
 
 
-    @GET("/config/info")
+    @GET("config/info")
     Call<Config> configInfo(@Query(NAME) String name, @Query("age") int age);
 
-    @GET("/teacher/studentproduct/list?productType=1&teacherId=1266&page=1&rows=10")
+    @GET("teacher/studentproduct/list?productType=1&teacherId=1266&page=1&rows=10")
     Call<BaseSequenceType<Product>> list();
 
 }

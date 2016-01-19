@@ -5,7 +5,8 @@ import android.os.Bundle;
 import android.os.StrictMode;
 import android.widget.Toast;
 
-import net.dr.retrofit.model.Config;
+import net.dr.retrofit.model.Product;
+import net.dr.retrofit.network.BaseSequenceType;
 import net.dr.retrofit.network.NetworkRequest;
 
 import java.io.IOException;
@@ -24,9 +25,9 @@ public class MainActivity extends Activity {
             StrictMode.setThreadPolicy(policy);
         }
 
-        Call<Config> call =  NetworkRequest.getInstance().configInfo("name",23);
+        Call<BaseSequenceType<Product>> call =  NetworkRequest.getInstance().list();
         try {
-            Config response  = call.execute().body();
+            BaseSequenceType<Product> response  = call.execute().body();
             Toast.makeText(MainActivity.this, response.message, Toast.LENGTH_SHORT).show();
         } catch (IOException e) {
             e.printStackTrace();

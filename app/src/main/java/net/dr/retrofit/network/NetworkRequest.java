@@ -16,7 +16,7 @@ import retrofit2.Retrofit;
  * Created by kalen on 15/7/24.
  */
 public class NetworkRequest {
-    public static final String API_URL = "http://118.244.236.9/edrive_interface/api";
+    public static final String API_URL = "http://118.244.236.9/edrive_interface/api/";
 
 
     public static Interfaces github;
